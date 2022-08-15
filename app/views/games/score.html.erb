@@ -1,5 +1,16 @@
-<h1>Your score is:</h1>
 
-<div class="score">
-  <p><%= @score %></p>
+<div class="container">
+  <h1>Result:</h1>
+
+  <div class="score">
+    <h3>Your result:</p>
+    <p><%= @result[:message].capitalize %></p>
+    <h3>Your score is:</p>
+    <p><%= @result[:score].to_s[0, 3] %> points</p>
+  </div>
+
+  <div class="link">
+    <button class="btn btn-primary"> <%= link_to "Play again", games_new_path %> </button>
+  </div>
+
 </div>

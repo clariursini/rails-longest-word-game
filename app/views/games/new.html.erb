@@ -1,21 +1,26 @@
-<h1>Welcome to the Game</h1>
+<div class="container">
+  <h1>Welcome to the Game</h1>
 
-<div class="letras-aleatorias">
-  <h2>Letras aleatorias</h2>
-  <ul>
-    <% @random_letters.each do |letter|%>
-    <li class="btn btn-primary"><%= letter %></li>
-    <% end %>
-  </ul>
-</div>
-
-<form class="form-inline" action="/games/score" method= "post" data-turbo="false">
-  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-  <%= hidden_field_tag :grid, @random_letters %>
-
-  <div class="form-group mx-sm-3 mb-2">
-    <label for="inputWord" class="sr-only">What is the longest word you can find?</label>
-    <input type="text" name= "word" class="form-control" id="inputWord2" placeholder="Your guess">
+  <div class="letras-aleatorias">
+    <h2>Grid</h2>
+    <ul>
+      <% @random_letters.each do |letter|%>
+      <li class="btn btn-primary"><%= letter.capitalize %></li>
+      <% end %>
+    </ul>
   </div>
-  <button type="submit" class="btn btn-primary mb-2">Play</button>
-</form>
+
+  <div class="form">
+    <form class="form-inline" action="/games/score" method= "post" data-turbo="false">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <%= hidden_field_tag :grid, @random_letters %>
+      <%= hidden_field_tag :start_time, Time.now %>
+
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="inputWord" class="sr-only">What is the longest word you can find?</label>
+        <input type="text" name= "word" class="form-control" id="inputWord2" placeholder="Your guess">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Play</button>
+    </form>
+</div>
+</div>

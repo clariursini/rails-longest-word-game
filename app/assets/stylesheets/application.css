@@ -13,16 +13,74 @@
  *= require_tree .
  *= require_self
  */
+.container {
+  width: 600px;
+  margin: 0px, auto;
+  margin-top: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(208, 230, 222);
+  border-radius: 7px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
 
- h1 {
-  margin: 20px;
- }
+.letras-aleatorias {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
- h2 {
-  margin: 0, auto;
- }
+.letras-aleatorias ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+}
 
- .score {
-  width: 500px;
-  margin: 0, auto;
- }
+.form-inline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.sr-only {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.score {
+  margin: 10px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.score p {
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.score h3 {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
